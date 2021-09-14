@@ -61,7 +61,6 @@ export default createStore({
     },
     updateFromCart(state, product) {
       let item = state.cart.find( i => i.id === product.id)
-      console.log(item);
       updateLocalStorage(state.cart)
     },
     updateCartFromLocalStorage(state) {
@@ -83,16 +82,21 @@ export default createStore({
         })
     },
     submitOrder ({ state, commit }, query) {
-      console.log(state)
-      console.log(commit),
-      console.log(query)
-      let dataQuery = {
-        ...query.formData
-      }
-      console.log(dataQuery);
-      return axios.post( 'https://nonchalant-fang.glitch.me/order', query)
+      return axios.post( 'https://nonchalant-fang.glitch.me/order', query.order)
         .then(res => {
-          console.log(res)
+          query.vm.$toast.show(res.data.message, {
+            type: res.data.status
+          })
+          state.cart = []
+          updateLocalStorage(state.cart)
+          query.vm.$router.push({ path: "/" })
+        })
+        .catch((error) => {
+          if (error.response.status === 404) {
+            query.vm.$toast.show(error.response.data.message, {
+              type: error.response.data.status
+            })
+          }
         })
     }
   },

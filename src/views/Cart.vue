@@ -14,7 +14,7 @@
       <div class="card">
         <div>
           <button 
-            class="place-order-button" 
+            class="place-order-button"
             @click="submitOrder(products)"
           >
             PLACE ORDER
@@ -52,8 +52,9 @@ export default {
   methods: {
     submitOrder(model) {
       let myTarget = JSON.parse(JSON.stringify(model));
-      console.log(myTarget);
-      this.$store.dispatch("submitOrder", myTarget);
+      if(myTarget.length) {
+        this.$store.dispatch("submitOrder", {...this.query, order: myTarget, vm: this })
+      }
     },
   },
 };
