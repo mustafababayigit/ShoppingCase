@@ -34,7 +34,7 @@
       <p class="item-price">
         {{ product.currency }} {{ product.price }}
       </p>
-      <div class="test">
+      <div class="item-remove-button">
         <p 
           style="cursor:pointer" 
           @click="deleteFromCart(product)"
@@ -131,7 +131,7 @@ export default {
                 margin: 0px 5px 0px 5px;
             }
 
-            .test {
+            .item-remove-button {
                 text-align: right;
             }
         }

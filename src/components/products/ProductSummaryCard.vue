@@ -8,7 +8,7 @@
     <h4 class="name">
       {{ product.name }}
     </h4>
-    <div class="test">
+    <div class="price-basket">
       <p class="price">
         {{ product.currency }} {{ product.price }}
       </p>
@@ -61,7 +61,7 @@ export default {
   }
 }
 
-.test {
+.price-basket {
   display: flex;
   justify-content: space-around;
   height: 15%;
