@@ -98,7 +98,7 @@ export default {
 }
 
 .place-order-button {
-  background: rgb(245, 144, 66);
+  background: rgb(251,100,27);
   color: #fff;
   font-family: Sans-serif;
   font-weight: bold;

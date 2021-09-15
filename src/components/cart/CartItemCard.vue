@@ -28,10 +28,10 @@
       </div>
     </div>
     <div class="secondDiv">
-      <h4 class="name">
+      <h4>
         {{ product.name }}
       </h4>
-      <p class="price">
+      <p class="item-price">
         {{ product.currency }} {{ product.price }}
       </p>
       <div class="test">
@@ -102,12 +102,6 @@ export default {
         }
     }
 
-    @media (min-width: 500px) {
-        .cart {
-            width: 350px;
-        }
-    }
-
     .card {
         width: 80%;
         margin: 1px;
@@ -117,14 +111,6 @@ export default {
         border-style: solid;
         border: gray;
         // box-shadow: 0 0 5px gray;
-
-        h4.name {
-            color: gray;
-        }
-
-        p.price {
-            color: gray;
-        }
 
         .firstDiv {
             width: 40%;
@@ -157,12 +143,11 @@ export default {
         }
     }
 
+    .item-price {
+      font-weight: bold;
+    }
+
     button.product-amount-button {
-        // padding: 5px;
-        // background-color: rgb(245, 144, 66);
-        // border: none;
-        // color: white;
-        // font-weight: bold;
         border-radius: 50%;
         cursor: pointer;
         border: gray;

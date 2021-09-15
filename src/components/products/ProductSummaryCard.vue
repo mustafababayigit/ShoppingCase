@@ -69,7 +69,7 @@ export default {
 
 button.view-product-button {
   // padding: 5px;
-  background-color: rgb(245, 144, 66);
+  background-color: rgb(251,100,27);
   border: none;
   color: white;
   font-weight: bold;
